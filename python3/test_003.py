@@ -1,6 +1,6 @@
 from time import time
 from math import sqrt
-from prime import is_prime
+from test_prime import is_prime
 
 
 def solve():
