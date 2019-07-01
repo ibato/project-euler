@@ -1,8 +1,3 @@
-# %% [markdown]
-## is_prime()
-# Check all odd numbers from 3 to $\sqrt{n}$, so the complexity is $O(\sqrt{n})$.
-
-# %%
 from math import sqrt
 from time import time
 
@@ -23,6 +18,7 @@ def test():
     assert is_prime(4) == False
 
 
-start = time()
-test()
-print("Execution time:", time() - start)
+if __name__ == '__main__':
+    start = time()
+    test()
+    print("Execution time:", time() - start)
