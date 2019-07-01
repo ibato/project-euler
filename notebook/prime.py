@@ -20,11 +20,9 @@ def is_prime(n):
 
 def test():
     assert is_prime(32416190071) == True
+    assert is_prime(4) == False
 
 
 start = time()
 test()
 print("Execution time:", time() - start)
-
-
-#%%
