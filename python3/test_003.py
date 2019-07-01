@@ -8,8 +8,7 @@ import test_prime as prime
 
 # First Approach - Test all numbers
 #
-# This approach tests all numbers whether that is the prime factor or not
-# and acquire the largest of them.
+# This approach tests all numbers whether that is the prime factor or not and acquire the largest of them.
 def first_approach():
     num = 600851475143
     answer = 0
