@@ -56,16 +56,26 @@ def third_approach():
 def test():
     right_answer = 6857
 
+    start = time()
     answer = first_approach()
-    print("Answer:", answer)
     assert answer == right_answer
+    print("Answer:", answer)
+    end = time()
+    print("Execution time:", end - start)
 
+    start = end
     answer = second_approach()
-    print("Answer:", answer)
     assert answer == right_answer
+    print("Answer:", answer)
+    end = time()
+    print("Execution time:", end - start)
+
+    start = end
+    answer = third_approach()
+    assert answer == right_answer
+    print("Answer:", answer)
+    print("Execution time:", time() - start)
 
 
 if __name__ == '__main__':
-    start = time()
     test()
-    print("Execution time:", time() - start)
