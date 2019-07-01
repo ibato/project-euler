@@ -1,6 +1,10 @@
 from time import time
 
+# 001. Multiples of 3 and 5
+# https://projecteuler.net/problem=1
 
+
+# This is just the brute force attack.
 def solve():
     return sum(filter(lambda x: x % 3 == 0 or x % 5 == 0, range(1, 1000)))
 

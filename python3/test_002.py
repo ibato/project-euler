@@ -1,6 +1,10 @@
 from time import time
 
+# 002. Even Fibonacci numbers
+# https://projecteuler.net/problem=2
 
+
+# This is just the brute force attack.
 def solve():
     a = 1
     b = 2
