@@ -1,6 +1,6 @@
 from time import time
 from math import sqrt
-from test_prime import is_prime
+import test_prime as prime
 
 # 003. Largest prime factor
 # https://projecteuler.net/problem=3
@@ -11,10 +11,10 @@ from test_prime import is_prime
 # This approach tests all numbers whether that is the prime factor or not
 # and acquire the largest of them.
 def first_approach():
-    n = 600851475143
+    num = 600851475143
     answer = 0
-    for i in range(int(sqrt(n)), 2, -1):
-        if is_prime(i) == True and n % i == 0:
+    for i in range(int(sqrt(num)), 2, -1):
+        if prime.is_prime(i) == True and num % i == 0:
             answer = i
             break
     return answer
@@ -27,12 +27,12 @@ def first_approach():
 #
 # There is no significant difference in execution time compared to the first approach.
 def second_approach():
-    n = 600851475143
+    num = 600851475143
     answer = 0
-    for i in range(int(sqrt(n)), 2, -1):
+    for i in range(int(sqrt(num)), 2, -1):
         if i % 2 == 0 or i % 5 == 0:
             continue
-        if is_prime(i) == True and n % i == 0:
+        if prime.is_prime(i) == True and num % i == 0:
             answer = i
             break
     return answer
@@ -43,10 +43,10 @@ def second_approach():
 # My is_prime() method is O(sqrt{n}),
 # so this is much faster to divide the numbers directly and make it smaller and smaller.
 def third_approach():
-    n = 600851475143
+    num = 600851475143
     answer = 0
-    for i in range(3, int(sqrt(n)), 2):
-        if n % i == 0:
+    for i in range(3, int(sqrt(num)), 2):
+        if num % i == 0:
             answer = i
             n = n / i
             i = i - 2
