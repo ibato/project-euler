@@ -47,7 +47,7 @@ def third_approach():
     for i in range(3, int(sqrt(num)), 2):
         if num % i == 0:
             answer = i
-            n = n / i
+            num = num / i
             i = i - 2
     return answer
 
