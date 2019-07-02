@@ -32,6 +32,14 @@ def second_approach():
     return answer
 
 
+# Third Approach - One-liner
+#
+# This is a one-liner solution. The logic is the same as the 2nd approach.
+def third_approach():
+    return max([i * j for i in range(999, 100, -1) for j in range(999, 100, -1)
+                if (i * j) % 11 == 0 and pdr.is_palindrome(i * j) == True])
+
+
 def test():
     right_answer = 906609
 
@@ -44,6 +52,13 @@ def test():
 
     start = end
     answer = second_approach()
+    assert answer == right_answer
+    print("Answer:", answer)
+    end = time()
+    print("Execution time:", end - start)
+
+    start = end
+    answer = third_approach()
     assert answer == right_answer
     print("Answer:", answer)
     end = time()
