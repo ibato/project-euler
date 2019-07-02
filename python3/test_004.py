@@ -2,7 +2,7 @@ from time import time
 from math import sqrt
 import test_palindrome as pdr
 
-# 004.Largest palindrome product
+# 004. Largest palindrome product
 # https://projecteuler.net/problem=4
 
 
