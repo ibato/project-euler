@@ -1,4 +1,5 @@
 from time import time
+import test_runner as runner
 
 # 001. Multiples of 3 and 5
 # https://projecteuler.net/problem=1
@@ -10,9 +11,8 @@ def solve():
 
 
 def test():
-    answer = solve()
-    print("Answer:", answer)
-    assert answer == 233168
+    right_answer = 233168
+    runner.run(solve, right_answer)
 
 
 if __name__ == '__main__':

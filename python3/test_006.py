@@ -1,4 +1,5 @@
 from time import time
+import test_runner as runner
 
 # 006. Sum square difference
 # https://projecteuler.net/problem=6
@@ -16,13 +17,7 @@ def solve():
 
 def test():
     right_answer = 25164150
-
-    start = time()
-    answer = solve()
-    assert answer == right_answer
-    print("Answer:", answer)
-    end = time()
-    print("Execution time:", end - start)
+    runner.run(solve, right_answer)
 
 
 if __name__ == '__main__':

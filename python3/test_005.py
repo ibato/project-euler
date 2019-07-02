@@ -1,4 +1,5 @@
 from time import time
+import test_runner as runner
 
 # 005. Smallest multiple
 # https://projecteuler.net/problem=5
@@ -18,13 +19,7 @@ def solve():
 
 def test():
     right_answer = 232792560
-
-    start = time()
-    answer = solve()
-    assert answer == right_answer
-    print("Answer:", answer)
-    end = time()
-    print("Execution time:", end - start)
+    runner.run(solve, right_answer)
 
 
 if __name__ == '__main__':

@@ -1,6 +1,7 @@
 from time import time
 from math import sqrt
 import test_prime as prime
+import test_runner as runner
 
 # 003. Largest prime factor
 # https://projecteuler.net/problem=3
@@ -55,25 +56,9 @@ def third_approach():
 def test():
     right_answer = 6857
 
-    start = time()
-    answer = first_approach()
-    assert answer == right_answer
-    print("Answer:", answer)
-    end = time()
-    print("Execution time:", end - start)
-
-    start = end
-    answer = second_approach()
-    assert answer == right_answer
-    print("Answer:", answer)
-    end = time()
-    print("Execution time:", end - start)
-
-    start = end
-    answer = third_approach()
-    assert answer == right_answer
-    print("Answer:", answer)
-    print("Execution time:", time() - start)
+    runner.run(first_approach, right_answer)
+    runner.run(second_approach, right_answer)
+    runner.run(third_approach, right_answer)
 
 
 if __name__ == '__main__':

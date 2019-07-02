@@ -1,6 +1,7 @@
 from time import time
 from math import sqrt
 import test_palindrome as pdr
+import test_runner as runner
 
 # 004. Largest palindrome product
 # https://projecteuler.net/problem=4
@@ -43,26 +44,9 @@ def third_approach():
 def test():
     right_answer = 906609
 
-    start = time()
-    answer = first_approach()
-    assert answer == right_answer
-    print("Answer:", answer)
-    end = time()
-    print("Execution time:", end - start)
-
-    start = end
-    answer = second_approach()
-    assert answer == right_answer
-    print("Answer:", answer)
-    end = time()
-    print("Execution time:", end - start)
-
-    start = end
-    answer = third_approach()
-    assert answer == right_answer
-    print("Answer:", answer)
-    end = time()
-    print("Execution time:", end - start)
+    runner.run(first_approach, right_answer)
+    runner.run(second_approach, right_answer)
+    runner.run(third_approach, right_answer)
 
 
 if __name__ == '__main__':

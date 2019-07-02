@@ -1,4 +1,5 @@
 from time import time
+import test_runner as runner
 
 # 002. Even Fibonacci numbers
 # https://projecteuler.net/problem=2
@@ -19,9 +20,8 @@ def solve():
 
 
 def test():
-    answer = solve()
-    print("Answer:", answer)
-    assert answer == 4613732
+    right_answer = 4613732
+    runner.run(solve, right_answer)
 
 
 if __name__ == '__main__':

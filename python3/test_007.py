@@ -1,5 +1,6 @@
 from time import time
 import test_prime as prime
+import test_runner as runner
 
 # 007. 10001st prime
 # https://projecteuler.net/problem=7
@@ -36,19 +37,8 @@ def second_approach():
 def test():
     right_answer = 104743
 
-    start = time()
-    answer = first_approach()
-    assert answer == right_answer
-    print("Answer:", answer)
-    end = time()
-    print("Execution time:", end - start)
-
-    start = end
-    answer = second_approach()
-    assert answer == right_answer
-    print("Answer:", answer)
-    end = time()
-    print("Execution time:", end - start)
+    runner.run(first_approach, right_answer)
+    runner.run(second_approach, right_answer)
 
 
 if __name__ == '__main__':
