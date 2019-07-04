@@ -1,8 +1,8 @@
-017. Number letter counts
-#Problem
+# 017. Number letter counts
+## Problem
 https://projecteuler.net/problem=17
 
-#Solution
+## Solution
 one two three four five six seven eight nine ten
 eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen
 twenty, twenty one ~ twenty nine
