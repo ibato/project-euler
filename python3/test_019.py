@@ -2,8 +2,8 @@ from time import time
 import test_matrix as matrix
 import test_runner as runner
 
-# 019. Maximum path sum I
-# https://projecteuler.net/problem=18
+# 019. Counting Sundays
+# https://projecteuler.net/problem=19
 
 
 def solve():
