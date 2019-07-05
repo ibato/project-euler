@@ -2,7 +2,7 @@ from time import time
 import test_divisor as divisor
 import test_runner as runner
 
-# https://projecteuler.net/problem=23
+# https://projecteuler.net/problem=25
 
 
 def solve():
