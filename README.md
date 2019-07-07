@@ -24,7 +24,7 @@ Python 3.7.3
 platform win32 -- Python 3.7.3, pytest-4.3.1, py-1.8.0, pluggy-0.9.0
 rootdir: C:\Users\yoonh\workspace\github\ibato\project-euler, inifile:
 plugins: remotedata-0.3.1, openfiles-0.3.2, doctestplus-0.3.0, arraydiff-0.3
-collected 56 items                                                                                                                                                       
+collected 56 items
 
 python3\test_001.py .                                                              [  1%]
 python3\test_002.py .                                                              [  3%]
