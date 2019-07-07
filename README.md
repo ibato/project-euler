@@ -13,13 +13,13 @@ Jupyter & colab | Some experiments
 ## Prerequisites
 Python3+
 ```
-$ python --version
+> python --version
 Python 3.7.3
 ```
 
 ## Quick Start
 ```
-$ python -m pytest .\python3\.
+> python -m pytest .\python3\.
 ========================================================================== test session starts ==========================================================================
 platform win32 -- Python 3.7.3, pytest-4.3.1, py-1.8.0, pluggy-0.9.0
 rootdir: C:\Users\yoonh\workspace\github\ibato\project-euler, inifile:
