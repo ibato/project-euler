@@ -5,35 +5,32 @@ import test_runner as runner
 
 
 cache = []
-
+primes_100000 = prm.find_primes(2, 100000)
+primes = prm.find_primes(2, 10000)
 
 def solve():
-    primes = prm.find_primes(2, 10000)
     primes.remove(2)
     primes.remove(5)
 
-    candidates = []
-    answer = 50000
     start = time()
 
-    for cb5 in combinations(primes, 2):
-        current = time()
-        if (current - start) % 10 >= 0 and (current - start) % 10 < 0.001:
-            print("log: %s, %s"% (format_time(current - start), cb5))
-        for cb2 in combinations(cb5, 2):
-            if cb2 not in cache:
-                if not can_produce_prime(cb2[0], cb2[1]):
-                    break
-        else:
-            candidates.append(cb5)
-    
-    n_plus_1 = candidates
-    for n in range(3):
-        n_plus_1 = find_n_plus_1_answers(n_plus_1)
-        print(n_plus_1)
-    print(n_plus_1)
+    for a in range(len(primes)):
+        for b in range(a + 1, len(primes)):
+            for c in range(b + 1, len(primes)):
+                for d in range(c + 1, len(primes)):
+                    for e in range(d + 1, len(primes)):
+                        n1 = primes[a]; n2 = primes[b]; n3 = primes[c]; n4 = primes[d]; n5 = primes[e]
 
-    return sorted(map(lambda x: sum(x), n_plus_1))[0]
+                        current = time()
+                        if (current - start) % 10 >= 0 and (current - start) % 10 < 0.001:
+                            print("log: %s, %s" % (format_time(current - start), (n1, n2, n3, n4, n5)))
+
+                        for cb in combinations((n1, n2, n3, n4, n5), 2):
+                            if cb not in cache:
+                                if not can_produce_prime(cb[0], cb[1]):
+                                    break
+                        else:
+                            return sum((n1, n2, n3, n4, n5))
 
 
 def format_time(seconds):
@@ -44,29 +41,11 @@ def format_time(seconds):
     return str(int(seconds / 3600)) + " hours " + str(int((seconds % 3600) / 60)) + " mins"
 
 
-def find_n_plus_1_answers(candidates):
-    print("candidates[0]: ", candidates[0])
-    start = time()
-    n_plus_1 = []
-    for candidate in candidates:
-        primes = prm.find_primes(candidate[-1], 10000)
-        for p in primes:
-            current = time()
-            if (current - start) % 10 >= 0 and (current - start) % 10 < 0.001:
-                print("log: %s, %s, %d"% (format_time(current - start), candidate, p))
-            for cd in candidate:
-                if (cd, p) not in cache:
-                    if not can_produce_prime(cd, p):
-                        break
-            else:
-                n_plus_1.append((cd, p))
-    return n_plus_1
-
-
 def can_produce_prime(n1, n2):
     a1 = int(str(n1) + str(n2))
     a2 = int(str(n1) + str(n2))
-    if prm.is_prime(a1) and prm.is_prime(a2):
+
+    if a1 in primes_100000 and a2 in primes_100000:
         cache.append((n1, n2))
         return True
     return False
