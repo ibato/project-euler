@@ -7,13 +7,11 @@ import test_runner as runner
 cache = []
 start = time()
 
-primes_sieve = prm.find_primes(2, 100000000)
 primes = prm.find_primes(2, 10000)
+primes.remove(2)
+primes.remove(5)
 
 def solve():
-    primes.remove(2)
-    primes.remove(5)
-
     for a in range(len(primes)):
         for b in range(a + 1, len(primes)):
             if not can_produce_prime(primes[a], primes[b]):
@@ -46,7 +44,7 @@ def format_time(seconds):
 
 def can_produce_prime(n1, n2):
     current = time()
-    if (current - start) % 10 >= 0 and (current - start) % 10 < 0.1:
+    if (current - start) % 10 >= 0 and (current - start) % 10 < 0.001:
         print("log: %s, %s" % (format_time(current - start), (n1, n2)))
 
     if (n1, n2) in cache:
@@ -55,9 +53,7 @@ def can_produce_prime(n1, n2):
     a1 = int(str(n1) + str(n2))
     a2 = int(str(n2) + str(n1))
 
-    if a1 in primes_sieve and a2 in primes_sieve:
-        if n1 > 1000 and n2 > 1000:
-            print(a1, a2, n1, n2)
+    if prm.is_prime(a1) and prm.is_prime(a2):
         cache.append((n1, n2))
         return True
     return False
