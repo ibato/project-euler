@@ -1,4 +1,5 @@
 from time import time
+from datetime import timedelta
 from itertools import combinations
 import test_prime as prm
 import test_runner as runner
@@ -28,25 +29,12 @@ def solve():
                     for e in range(d + 1, len(primes)):
                         n1 = primes[a]; n2 = primes[b]; n3 = primes[c]; n4 = primes[d]; n5 = primes[e]
                         if can_produce_prime(n1, n5) and can_produce_prime(n2, n5) and can_produce_prime(n3, n5) and can_produce_prime(n4, n5):
-                            print("answer: ", sum((n1, n2, n3, n4, n5)), (n1, n2, n3, n4, n5))
+                            print("Answer: ", sum((n1, n2, n3, n4, n5)), (n1, n2, n3, n4, n5))
                             return sum((n1, n2, n3, n4, n5))
                         else:
                             continue
 
-
-def format_time(seconds):
-    if seconds < 60:
-        return str(int(seconds)) + " secs"
-    elif seconds < 3600:
-        return str(int(seconds / 60)) + " mins " + str(int((seconds % 60))) + " secs"
-    return str(int(seconds / 3600)) + " hours " + str(int((seconds % 3600) / 60)) + " mins"
-
-
 def can_produce_prime(n1, n2):
-    current = time()
-    if (current - start) % 10 >= 0 and (current - start) % 10 < 0.001:
-        print("log: %s, %s" % (format_time(current - start), (n1, n2)))
-
     if (n1, n2) in cache:
         return True
 
