@@ -56,7 +56,8 @@ def can_produce_prime(n1, n2):
     a2 = int(str(n2) + str(n1))
 
     if a1 in primes_sieve and a2 in primes_sieve:
-        print(a1, a2, n1, n2)
+        if n1 > 1000 and n2 > 1000:
+            print(a1, a2, n1, n2)
         cache.append((n1, n2))
         return True
     return False
